@@ -6,4 +6,4 @@ Electromagnetics" (doi:10.2200/S00019ED1V01Y200604CEM004)
 geometrical domain of a boundary-value problem into smaller subdomains, 
 called the finite elements, and expressing the governing differential 
 equation along with the associated boundary conditions as a set of linear 
-equations that can be solved computationally using linear algebra techniques.
+equations that can be solved computationally using linear algebra techniques."
