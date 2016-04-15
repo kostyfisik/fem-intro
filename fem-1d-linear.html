@@ -2345,7 +2345,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Split-into-discrets,-approximate-the-solution-with-shape-(interpolation)-functions.">Split into discrets, approximate the solution with shape (interpolation) functions.<a class="anchor-link" href="#Split-into-discrets,-approximate-the-solution-with-shape-(interpolation)-functions.">&#182;</a></h2>
+<h2 id="Split-into-finite-elements,-approximate-the-solution-with-shape-(interpolation)-functions.">Split into finite elements, approximate the solution with shape (interpolation) functions.<a class="anchor-link" href="#Split-into-finite-elements,-approximate-the-solution-with-shape-(interpolation)-functions.">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -2355,7 +2355,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can split our 1D continious space into uniform line segments (cells), and we will address them as finite elements. Each element has coordinates <span class="math">\(x_1\)</span> and <span class="math">\(x_2\)</span>, which correspond to local nodes 1 and 2 of the element. We can transform this coordinates to the natural ones (related to the reference cell): <span class="math">\[ \xi = \frac{2(x-x_1)}{x_2-x_1}-1 \]</span> This way the coordinate inside the cell will be <span class="math">\((−1 \leq \xi \leq 1)\)</span>. We will use uniform domain discretization and approximate the solution with linear shape functions: <span class="math">\[ N_1(\xi)=\frac{1-\xi}{2}\]</span> <span class="math">\[ N_2(\xi)=\frac{1+\xi}{2}\]</span> At any point inside the master (reference) element, the primary unknown quantity of potential <span class="math">\(V\)</span> can be expressed as approximate value <span class="math">\[ \widetilde{V}(\xi) = V_1 N_1(\xi)+V_{2} N_{2}(\xi)\]</span> or we can map it back to the real cell <span class="math">\[ \widetilde{V}(x)=\left. \sum_{j=1}^{n} v_j N_j(x)\right|_{n=2}\]</span> where <span class="math">\(v_j\)</span> are the solution values at the nodes of the element.</p>
+<p>We can split our 1D continuous space into uniform line segments (cells), and we will address them as finite elements. Each element has coordinates <span class="math">\(x_1\)</span> and <span class="math">\(x_2\)</span>, which correspond to local nodes 1 and 2 of the element. We can transform this coordinates to the natural ones (related to the reference cell): <span class="math">\[ \xi = \frac{2(x-x_1)}{x_2-x_1}-1 \]</span> This way the coordinate inside the cell will be <span class="math">\((−1 \leq \xi \leq 1)\)</span>. We will use uniform domain discretization and approximate the solution with linear shape functions: <span class="math">\[ N_1(\xi)=\frac{1-\xi}{2}\]</span> <span class="math">\[ N_2(\xi)=\frac{1+\xi}{2}\]</span> At any point inside the master (reference) element, the primary unknown quantity of potential <span class="math">\(V\)</span> can be expressed as approximate value <span class="math">\[ \widetilde{V}(\xi) = V_1 N_1(\xi)+V_{2} N_{2}(\xi)\]</span> or we can map it back to the real cell <span class="math">\[ \widetilde{V}(x)=\left. \sum_{j=1}^{n} v_j N_j(x)\right|_{n=2}\]</span> where <span class="math">\(v_j\)</span> are the solution values at the nodes of the element.</p>
 </div>
 </div>
 </div>
@@ -2656,7 +2656,7 @@ dx
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At the beggining lets consider the case of two connected cells (finite elemets, in 1D case they are segments). For each of them we have a matix equation, with <span class="math">\(^{(1)}\)</span> supersript for the first element and <span class="math">\(^{(2)}\)</span> for the second one. With the regular meshing the length all elements is the same, e.g. <span class="math">\(l^{(1)}=l^{(2)}=l\)</span></p>
+<p>At the beginning, lets consider the case of two connected cells (finite elements, in 1D case they are segments). For each of them, we have a matrix equation, with <span class="math">\(^{(1)}\)</span> superscript for the first element and <span class="math">\(^{(2)}\)</span> for the second one. With the regular meshing, the length for all elements is the same, e.g. <span class="math">\(l^{(1)}=l^{(2)}=l\)</span></p>
 </div>
 </div>
 </div>
@@ -2730,7 +2730,7 @@ dx
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can introduce the global enumeration for the primary unknown quantity of potential, so lets consider <span class="math">\[\widetilde{V}_0 = v_{1}^{(1)}\]</span> <span class="math">\[\widetilde{V}_1 = v_{2}^{(1)} = v_{1}^{(2)}\]</span> <span class="math">\[\widetilde{V}_2 = v_{2}^{(2)}\]</span></p>
+<p>We can introduce the global enumeration for the primary unknown quantity of potential, so let`s consider <span class="math">\[\widetilde{V}_0 = v_{1}^{(1)}\]</span> <span class="math">\[\widetilde{V}_1 = v_{2}^{(1)} = v_{1}^{(2)}\]</span> <span class="math">\[\widetilde{V}_2 = v_{2}^{(2)}\]</span></p>
 </div>
 </div>
 </div>
@@ -2804,7 +2804,7 @@ dx
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As far as problem domian uses a homogenous distribution of material parameter <span class="math">\(\varepsilon^{(1)} = \varepsilon^{(2)} = \varepsilon\)</span> and we can simply add one equation system to another, and summarize the equations that corresponds to the same row of the extende <span class="math">\(K\)</span> matrix.</p>
+<p>As far as problem domain uses a homogeneous distribution of material parameter <span class="math">\(\varepsilon^{(1)} = \varepsilon^{(2)} = \varepsilon\)</span> and we can simply add one equation system to another, and summarize the equations that correspond to the same row of the extended <span class="math">\(K\)</span> matrix.</p>
 </div>
 </div>
 </div>
@@ -2845,7 +2845,7 @@ dx
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For homogenous charge distribution <span class="math">\(\rho_0\)</span> and small elements (so, the change of the potential is smooth enough in the neighbor cells) the difference <span class="math">\(\widetilde{D}_{1}^{(2)} -\widetilde{D}_{2}^{(1)} \simeq 0\)</span></p>
+<p>For homogeneous charge distribution <span class="math">\(\rho_0\)</span> and small elements (so, the change of the potential is smooth enough in the neighbor cells) the difference <span class="math">\(\widetilde{D}_{1}^{(2)} -\widetilde{D}_{2}^{(1)} \simeq 0\)</span></p>
 </div>
 </div>
 </div>
@@ -2926,7 +2926,7 @@ dx
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To apply a Dirichlet boundary condition to the left boundary of the first element we can directly substite it into the equation system. So for <span class="math">\(\widetilde{V}_0 = V_0\)</span> we remove the first equation (the first row) and move the first column of the <span class="math">\(K\)</span> matrix to the right</p>
+<p>To apply a Dirichlet boundary condition to the left boundary of the first element we can directly substitute it into the equation system. So for <span class="math">\(\widetilde{V}_0 = V_0\)</span> we remove the first equation (the first row) and move the first column of the <span class="math">\(K\)</span> matrix to the right</p>
 </div>
 </div>
 </div>
@@ -2981,7 +2981,7 @@ V_0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Same for the right boundary of the last element. So for <span class="math">\(\widetilde{V}_4 = 0\)</span> we remove the last equation (the bottom row) and remove the last column in <span class="math">\(K\)</span> matrix (it dissappears after multiplication to zero value of the potencial at the boundary). We also do not use <span class="math">\(\widetilde{D}\)</span> vector anymore, as soon as it equals zero too.</p>
+<p>Same for the right boundary of the last element. So for <span class="math">\(\widetilde{V}_4 = 0\)</span> we remove the last equation (the bottom row) and remove the last column in <span class="math">\(K\)</span> matrix (it disappears after multiplication to zero value of the potential at the boundary). We also do not use <span class="math">\(\widetilde{D}\)</span> vector anymore, as soon as it equals zero too.</p>
 </div>
 </div>
 </div>
@@ -3098,13 +3098,13 @@ In&nbsp;[11]:
 <span class="c1"># Set the right-hand side</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">number_of_elements</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">l</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">rho_0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
 <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">V_0</span>
+
+<span class="c1"># Solve the system</span>
 <span class="n">V</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
 
-<span class="c1"># Solve the system</span>
-<span class="n">x_fem</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">number_of_elements</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
 <span class="c1">#Plot it with analytic solution.</span>
+<span class="n">x_fem</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">number_of_elements</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">evaluate</span> <span class="o">=</span> <span class="n">V_0</span> <span class="o">+</span> <span class="n">rho_0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">varepsilon_0</span><span class="o">*</span><span class="n">varepsilon_r</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">V_0</span><span class="o">/</span><span class="n">d</span> <span class="o">-</span> <span class="n">d</span><span class="o">*</span><span class="n">rho_0</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">varepsilon_0</span><span class="o">*</span><span class="n">varepsilon_r</span><span class="p">))</span>
 <span class="n">x_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">number_of_elements</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">evaluate</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">value</span><span class="p">})</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x_vec</span><span class="p">])</span> 
