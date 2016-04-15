@@ -8,4 +8,4 @@ called the finite elements, and expressing the governing differential
 equation along with the associated boundary conditions as a set of linear 
 equations that can be solved computationally using linear algebra techniques."
 
-[HTML copy of IPython Notebook](https://cdn.rawgit.com/kostyfisik/fem-intro/906d468fd254f273894be2315054bf0dc617e03d/fem-1d-linear.html)
+[HTML copy of IPython Notebook](https://cdn.rawgit.com/kostyfisik/fem-intro/0a11325f3afe543e299a3fe5812f9be68af03d82/fem-1d-linear.html)
