@@ -10,3 +10,7 @@ equations that can be solved computationally using linear algebra techniques."
 
 [HTML copy of IPython Notebook](https://cdn.rawgit.com/kostyfisik/fem-intro/5b4c08e0b98cad1eda4de250a103112057bf1350/fem-1d-linear.html)
 
+For more details on FEM you can visit the tutorial of
+[Deal II](https://dealii.org/developer/doxygen/deal.II/Tutorial.html) -
+a C++ FEM library. They had published [50+ video lectures](http://www.math.tamu.edu/~bangerth/videos.html) on FEM and
+the Deal II library.
